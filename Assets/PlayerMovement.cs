@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Tilemaps;
 using UnityEngine;
-
+/*
+ * This class represent the player's movement system
+ * 
+ * Kelas ini mewakilkan sistem pergerakan pemain
+ */
 public class PlayerMovement : MonoBehaviour
 {
+    // COmponents
     private Rigidbody2D _rbody;
     private Animator _animator;
 
+    //Serialized Fields
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpHeight = 5f;
 
+    //Privat atriutes
     private bool _onTheGround = false;
 
+    #region Properties
     private float _horizontalMovement;
     public float HorizontalMovement
     {
@@ -22,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 _horizontalMovement = value;
 
+                // when the player changes direction
                 if (_horizontalMovement != 0)
                     FaceRight = _horizontalMovement > 0;
 
@@ -44,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         }
         get => _faceRight;
     }
-
+    #endregion
     private void Awake()
     {
         _rbody = GetComponent<Rigidbody2D>();
@@ -73,6 +82,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
+        // override the current velocity with our
+        // desired velocity based on inputed movement
         _rbody.velocity = new Vector2(
                 moveSpeed * HorizontalMovement, 
                 _rbody.velocity.y
@@ -92,6 +103,8 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit2D[] hits = new RaycastHit2D[5];
         int numhits = _rbody.Cast(Vector2.down, hits,0.5f);
+
+        // if numhits == 0, then Player is on the ground
         _onTheGround = numhits > 0;
     }
 
