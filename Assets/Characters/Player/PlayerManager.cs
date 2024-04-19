@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log(playerData.CurrentHealth);
+
     }
 
     // Update is called once per frame
