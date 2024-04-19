@@ -8,7 +8,8 @@ using UnityEngine;
  */
 public class PlayerMovement : MonoBehaviour
 {
-    // COmponents
+
+    // COmponents2
     private Rigidbody2D _rbody;
     private Animator _animator;
 

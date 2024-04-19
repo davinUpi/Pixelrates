@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5548301844885468597}
   - component: {fileID: 1296297751951868866}
   - component: {fileID: 5067597630046017979}
+  - component: {fileID: 8288277339551604141}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -162,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988133d31895da047874c36fae289948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 0}
   moveSpeed: 10
   jumpHeight: 5
 --- !u!95 &5067597630046017979
@@ -185,3 +187,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8288277339551604141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030295018860679694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db41fa35e1ba96945a6bbdb98992cd3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerData: {fileID: 11400000, guid: 398dab8da63ef98469ae0d4faf0455b4, type: 2}
+  IFrameTime: 1
