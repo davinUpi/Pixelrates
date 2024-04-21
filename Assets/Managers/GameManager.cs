@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject playerObject;
 
-    public Transform currentCheckpoint;
+    private GameObject currentCheckpoint;
 
     private void Awake()
     {
@@ -41,5 +41,11 @@ public class GameManager : MonoBehaviour
     {
         if (!currentCheckpoint)
             SpawnPlayer(currentCheckpoint.transform);
+    }
+
+    public void SetCheckpoint(Checkpoint checkpoint)
+    {
+        currentCheckpoint = checkpoint.gameObject;
+        Debug.Log("New Checkpoint");
     }
 }
