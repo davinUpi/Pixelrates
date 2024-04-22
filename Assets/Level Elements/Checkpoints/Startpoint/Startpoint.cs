@@ -11,7 +11,8 @@ public class Startpoint : Checkpoint
     }
     private void Start()
     {
-        GameManager.instance.SetCheckpoint(this);
+        Activate();
+        GameManager.instance.SpawnPlayer();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

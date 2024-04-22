@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentCheckpoint;
 
+    [Header("Event Channels")]
+    [SerializeField] private GameObjectEventChannel PlayerSpawnedEvent;
+
     private void Awake()
     {
         if (instance == null)
@@ -22,24 +25,27 @@ public class GameManager : MonoBehaviour
 
     public void SpawnPlayer(Transform spawnLocation)
     {
-        if (!playerPrefab)
+        Debug.Log("Attempt to spawn");
+        if (playerPrefab != null)
         {
-            if(!playerObject) 
-            { 
-                playerObject = Instantiate(playerPrefab, spawnLocation);
-            }
-            else
+            if(playerObject != null) 
             {
                 playerObject.transform.position = spawnLocation.position;
             }
+            else
+            {
+                playerObject = Instantiate(playerPrefab, spawnLocation.position, Quaternion.identity);
+            }
 
             playerData.ResetHealth();
+            if (PlayerSpawnedEvent != null)
+                PlayerSpawnedEvent.Invoke(playerObject);
         }
     }
 
     public void SpawnPlayer()
     {
-        if (!currentCheckpoint)
+        if (currentCheckpoint != null)
             SpawnPlayer(currentCheckpoint.transform);
     }
 

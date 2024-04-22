@@ -10,7 +10,7 @@ public class Checkpoint : MonoBehaviour
 
     [SerializeField] protected EventChannel DeactivateCheckpointsChannel;
 
-    private bool active = false;
+    protected bool active = false;
 
     protected void ResetDeactivateTrigger()
     {
@@ -27,7 +27,9 @@ public class Checkpoint : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            _listener.enabled = false;
             Activate();
+            _listener.enabled = true;
         }
     }
 
@@ -35,14 +37,12 @@ public class Checkpoint : MonoBehaviour
     {
         if(!active) 
         {
-            _listener.ignore = true;
             if (DeactivateCheckpointsChannel != null)
                 DeactivateCheckpointsChannel.Invoke(new Empty());
 
             _animator.SetTrigger("Activate");
             GameManager.instance.SetCheckpoint(this);
             active = true;
-            _listener.ignore = false;
         }
         
     }

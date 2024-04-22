@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 8030295018860679694, guid: 9e79b1e2e6284344395f62b0c6a8d5f8, type: 3}
   playerData: {fileID: 11400000, guid: 398dab8da63ef98469ae0d4faf0455b4, type: 2}
+  PlayerSpawnedEvent: {fileID: 11400000, guid: 76c678db013796544a82c5da10a19a2c, type: 2}
 --- !u!4 &791647710
 Transform:
   m_ObjectHideFlags: 0
