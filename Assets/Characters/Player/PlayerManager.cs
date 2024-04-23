@@ -12,30 +12,18 @@ public class PlayerManager : MonoBehaviour
 
     private IEnumerator IFrameTimer()
     {
+        IFrameActive = true;
         yield return new WaitForSeconds(IFrameTime);
         IFrameActive = false;
-    }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     public void TakeDamage(float damage)
     {
-        if(!IFrameActive) 
+        if (!IFrameActive) 
         {
-            IFrameActive = true;
-            if(playerData != null)
-                playerData.ReduceHealth(damage);
-            
             StartCoroutine(IFrameTimer());
-            
+            if (playerData != null)
+                playerData.ReduceHealth(damage);
         }
     }
 }
