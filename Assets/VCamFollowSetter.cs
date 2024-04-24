@@ -14,7 +14,7 @@ public class VCamFollowSetter : MonoBehaviour
 
     public void SetFollowTarget(GameObject target)
     {
-        if(target == null)
+        if(_vcam.m_Follow == null)
             _vcam.m_Follow = target.transform;
     }
 }
