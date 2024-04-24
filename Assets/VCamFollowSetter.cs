@@ -14,7 +14,7 @@ public class VCamFollowSetter : MonoBehaviour
 
     public void SetFollowTarget(GameObject target)
     {
-        Debug.Log("Set camera follow!");
-        _vcam.m_Follow = target.transform;
+        if(target == null)
+            _vcam.m_Follow = target.transform;
     }
 }

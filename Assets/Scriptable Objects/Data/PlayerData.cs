@@ -12,6 +12,7 @@ public class PlayerData : ScriptableObject
 
     [Header("Event channels")]
     [SerializeField] private FloatEventChannel HealthPercentageChannel;
+    [SerializeField] private EventChannel PlayerDiedChannel;
 
     private float _currentHealth;
     public float CurrentHealth
@@ -22,6 +23,10 @@ public class PlayerData : ScriptableObject
             {
                 _currentHealth = Mathf.Clamp(value, minHealth, maxHealth);
                 PublishHealthPercentage((_currentHealth - minHealth )/ (maxHealth - minHealth));
+
+                if (_currentHealth <= minHealth && PlayerDiedChannel != null)
+                    PlayerDiedChannel.Invoke(new Empty());
+
             }
         }
         

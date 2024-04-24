@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
             instance = this;
     }
 
+    #region player spawning
+
+    private const float DEFAULT_SPAWN_DELAY = 1f;
+
     public void SpawnPlayer(Transform spawnLocation)
     {
         Debug.Log("Attempt to spawn");
@@ -48,6 +52,25 @@ public class GameManager : MonoBehaviour
         if (currentCheckpoint != null)
             SpawnPlayer(currentCheckpoint.transform);
     }
+
+    private IEnumerator PlayerSpawnTimer(Transform spawnLocation)
+    {
+        yield return new WaitForSeconds(DEFAULT_SPAWN_DELAY);
+        SpawnPlayer(spawnLocation);
+    }
+
+    public void DelayedSpawnPlayer(Transform spawnLocation)
+    {
+        StartCoroutine(PlayerSpawnTimer(spawnLocation));
+    }
+
+    public void DelayedSpawnPlayer()
+    {
+        if(currentCheckpoint != null)
+            DelayedSpawnPlayer(currentCheckpoint.transform);
+    }
+
+    #endregion
 
     public void SetCheckpoint(Checkpoint checkpoint)
     {

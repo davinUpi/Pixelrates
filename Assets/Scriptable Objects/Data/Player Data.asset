@@ -16,3 +16,4 @@ MonoBehaviour:
   minHealth: 0
   resetToMax: 1
   HealthPercentageChannel: {fileID: 11400000, guid: a999ce58edc5a33438814373a071bef7, type: 2}
+  PlayerDiedChannel: {fileID: 11400000, guid: f481f9db54b784044b9c04110d00f805, type: 2}
