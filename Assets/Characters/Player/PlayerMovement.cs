@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpHeight = 5f;
 
+    private bool _alive = true;
+
     //Privat atriutes
 
     #region Properties
@@ -102,17 +104,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GroundCheck();
-        VerticalDelta = _rbody.velocity.y;
+        if(_alive)
+        {
+            GroundCheck();
+            VerticalDelta = _rbody.velocity.y;
 
-        HorizontalMovement = Input.GetAxis("Horizontal");
+            HorizontalMovement = Input.GetAxis("Horizontal");
 
-        Jump();
+            Jump();
+        }
+        
     }
 
     private void FixedUpdate()
     {
-        Move();    
+        if(_alive)
+        {
+            Move();
+        }
     }
 
     private void Move()
@@ -150,4 +159,6 @@ public class PlayerMovement : MonoBehaviour
         temp.x *= -1;
         transform.localScale = temp;
     }
+
+    public void UpdateAliveStatus(bool status) => _alive = status;
 }

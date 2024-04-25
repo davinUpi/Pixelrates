@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b2814c523e4ff4086c5fb1d035135f, type: 3}
-  m_Name: PlayerDiedChannel
+  m_Script: {fileID: 11500000, guid: a798fbf80d3018f47ba9651074b12fe1, type: 3}
+  m_Name: PlayerLiveStatusChannel
   m_EditorClassIdentifier: 
