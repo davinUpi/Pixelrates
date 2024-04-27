@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
     public static GameManager instance;
 
@@ -16,12 +16,6 @@ public class GameManager : MonoBehaviour
 
     [Header("Event Channels")]
     [SerializeField] private GameObjectEventChannel PlayerSpawnedEvent;
-
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-    }
 
     #region player spawning
 
