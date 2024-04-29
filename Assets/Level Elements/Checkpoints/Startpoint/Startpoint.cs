@@ -12,7 +12,7 @@ public class Startpoint : Checkpoint
     private void Start()
     {
         Activate();
-        GameManager.instance.SpawnPlayer();
+        GameManager.Instance.SpawnPlayer();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

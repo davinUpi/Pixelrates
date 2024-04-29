@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
             {
                 _alive = value;
                 if (_alive == false)
-                    GameManager.instance.DelayedSpawnPlayer();
+                    GameManager.Instance.DelayedSpawnPlayer();
             }
         }
         get => _alive;

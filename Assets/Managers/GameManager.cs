@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
-    public static GameManager instance;
 
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private PlayerData playerData;
@@ -21,7 +21,7 @@ public class GameManager : Singleton<GameManager>
 
     private const float DEFAULT_SPAWN_DELAY = 1f;
 
-    public void SpawnPlayer(Transform spawnLocation)
+    public async void SpawnPlayer(Transform spawnLocation)
     {
         Debug.Log("Attempt to spawn");
         if (playerPrefab != null)
@@ -33,8 +33,12 @@ public class GameManager : Singleton<GameManager>
             else
             {
                 playerObject = Instantiate(playerPrefab, spawnLocation.position, Quaternion.identity);
+                SceneManager.MoveGameObjectToScene(playerObject, SceneLoader.Instance.BaseScene);
+                
+
             }
 
+            
             playerData.ResetHealth();
             if (PlayerSpawnedEvent != null)
                 PlayerSpawnedEvent.Invoke(playerObject);

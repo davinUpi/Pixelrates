@@ -41,7 +41,7 @@ public class Checkpoint : MonoBehaviour
                 DeactivateCheckpointsChannel.Invoke(new Empty());
 
             _animator.SetTrigger("Activate");
-            GameManager.instance.SetCheckpoint(this);
+            GameManager.Instance.SetCheckpoint(this);
             active = true;
         }
         
