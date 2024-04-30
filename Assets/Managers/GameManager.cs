@@ -21,12 +21,12 @@ public class GameManager : Singleton<GameManager>
 
     private const float DEFAULT_SPAWN_DELAY = 1f;
 
-    public async void SpawnPlayer(Transform spawnLocation)
+    public void SpawnPlayer(Transform spawnLocation)
     {
         Debug.Log("Attempt to spawn");
         if (playerPrefab != null)
         {
-            if(playerObject != null) 
+            if (playerObject != null)
             {
                 playerObject.transform.position = spawnLocation.position;
             }
@@ -34,12 +34,13 @@ public class GameManager : Singleton<GameManager>
             {
                 playerObject = Instantiate(playerPrefab, spawnLocation.position, Quaternion.identity);
                 SceneManager.MoveGameObjectToScene(playerObject, SceneLoader.Instance.BaseScene);
-                
+
 
             }
 
-            
             playerData.ResetHealth();
+            playerData.ResertScore();
+
             if (PlayerSpawnedEvent != null)
                 PlayerSpawnedEvent.Invoke(playerObject);
         }

@@ -165,6 +165,10 @@ MonoBehaviour:
         asset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
         guid: 2cda990e2423bbf4892e6590ba056729
       type: 0
+    - reference:
+        asset: {fileID: 102900000, guid: 5a4ea384ff240dc428e325dca00a7224, type: 3}
+        guid: 5a4ea384ff240dc428e325dca00a7224
+      type: 2
 --- !u!4 &289279371
 Transform:
   m_ObjectHideFlags: 0

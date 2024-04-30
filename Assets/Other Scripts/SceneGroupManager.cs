@@ -72,6 +72,7 @@ public class SceneGroupManager
 
             var sceneName = sceneAt.name;
             if(sceneName.Equals(activeScene) || sceneName.Equals("Base Scene")) continue;
+            if(ActiveSceneGroup.FindSceneByName(sceneName)) continue;
 
             scenes.Add(sceneName);
         }

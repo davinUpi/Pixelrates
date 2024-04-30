@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class PlayerData : ScriptableObject
     [Header("Event channels")]
     [SerializeField] private FloatEventChannel HealthPercentageChannel;
     [SerializeField] private BoolEventChannel PlayerLiveStatusChannel;
+    [SerializeField] private IntEventChannel ScoreUpdateChannel;
 
     private float _currentHealth;
     public float CurrentHealth
@@ -32,6 +34,23 @@ public class PlayerData : ScriptableObject
         get => _currentHealth;
     }
 
+    private int _currentScore;
+    public int CurrentScore
+    {
+        private set
+        {
+            if(_currentScore != value)
+            {
+                _currentScore = value;
+                PublishScoreUpdate(_currentScore);
+
+                Debug.Log(_currentScore);
+            }
+        }
+
+        get =>  _currentScore;
+    }
+
     public void AddHealth(float delta)
     {
         CurrentHealth += delta;
@@ -45,6 +64,16 @@ public class PlayerData : ScriptableObject
     public void ResetHealth()
     {
         CurrentHealth = resetToMax ? maxHealth : minHealth;
+    }
+
+    public void AddScore(int value)
+    {
+        CurrentScore += Math.Abs(value);
+    }
+
+    public void ResertScore()
+    {
+        CurrentScore = 0;
     }
 
     private void OnEnable()
@@ -62,7 +91,14 @@ public class PlayerData : ScriptableObject
 
     private void PublishPlayerLiveStatus(bool status)
     {
-        if(PlayerLiveStatusChannel != null) PlayerLiveStatusChannel.Invoke(status);
+        if(PlayerLiveStatusChannel != null) 
+            PlayerLiveStatusChannel.Invoke(status);
+    }
+
+    private void PublishScoreUpdate(int value)
+    {
+        if (ScoreUpdateChannel != null) 
+            ScoreUpdateChannel.Invoke(_currentScore);
     }
 
     #endregion

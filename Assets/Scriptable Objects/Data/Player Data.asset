@@ -17,3 +17,4 @@ MonoBehaviour:
   resetToMax: 1
   HealthPercentageChannel: {fileID: 11400000, guid: a999ce58edc5a33438814373a071bef7, type: 2}
   PlayerLiveStatusChannel: {fileID: 11400000, guid: 06779e463f5afdb4da9dbd1907136b70, type: 2}
+  ScoreUpdateChannel: {fileID: 11400000, guid: 7438c791b192c8f468e9cddd99c339cb, type: 2}

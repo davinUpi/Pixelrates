@@ -15,6 +15,9 @@ public class SceneGroup
 
     public string FindSceneNameByType(SceneType type) =>
         Scenes.FirstOrDefault(scene => scene.type == type)?.reference.Name;
+
+    public bool FindSceneByName(string name) =>
+        Scenes.FirstOrDefault(Scene => Scene.name == name) != null;
 }
 
 [Serializable]
