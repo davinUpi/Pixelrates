@@ -69,6 +69,12 @@ public class GameManager : Singleton<GameManager>
             DelayedSpawnPlayer(currentCheckpoint.transform);
     }
 
+    public void DelayedSpawnPlayer(bool isAlive)
+    {
+        if (currentCheckpoint != null && !isAlive)
+            DelayedSpawnPlayer(currentCheckpoint.transform);
+    }
+
     #endregion
 
     public void SetCheckpoint(Checkpoint checkpoint)

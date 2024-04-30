@@ -11,19 +11,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float IFrameTime = 1f;
 
     private bool _alive;
-    public bool Alive
-    {
-        private set 
-        { 
-            if(_alive != value)
-            {
-                _alive = value;
-                if (_alive == false)
-                    GameManager.Instance.DelayedSpawnPlayer();
-            }
-        }
-        get => _alive;
-    }
 
     private bool IFrameActive = false;
 
@@ -52,6 +39,6 @@ public class PlayerManager : MonoBehaviour
     }
 
     public void UpdateAliveStatus(bool status) =>
-        Alive = status;
+        _alive = status;
     
 }

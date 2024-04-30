@@ -15,10 +15,6 @@ public class CollectibleFruit : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    private void OnDestroy()
-    {
-        _animator.SetTrigger("collected");
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))
@@ -26,9 +22,14 @@ public class CollectibleFruit : MonoBehaviour
             if(playerData != null)
                 playerData.AddScore(score);
 
-            Destroy(gameObject);
+            _animator.SetTrigger("collected");
         }
     }
+
+    private void DestorySelf() => Destroy(gameObject);
+
+    public void EnableSelf() => gameObject.SetActive(true);
+    private void DisableSelf() => gameObject.SetActive(false);
 
 
 }
