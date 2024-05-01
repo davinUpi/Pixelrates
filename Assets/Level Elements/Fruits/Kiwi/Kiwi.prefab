@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5710221178808625122
+--- !u!1001 &1883629906027689682
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 1821423742511531392, guid: 39496f0631b635949a1d7f7327d8248d, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 6c9c50b186fd648468e1496e4a1ac3c6, type: 2}
+      objectReference: {fileID: 22100000, guid: 0a0fd5924e412914a8ba70837b0c3402, type: 2}
     - target: {fileID: 2024849078568946537, guid: 39496f0631b635949a1d7f7327d8248d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -58,12 +58,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6310969228582325082, guid: 39496f0631b635949a1d7f7327d8248d, type: 3}
       propertyPath: m_Name
-      value: Banana
+      value: Kiwi
       objectReference: {fileID: 0}
     - target: {fileID: 6990840406744631768, guid: 39496f0631b635949a1d7f7327d8248d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -5728686177044832811, guid: b1f24b3bc2e2f1d4b858657ad5c115a0, type: 3}
+      objectReference: {fileID: 4138223980208024357, guid: 5100b75572e484e458e4340e2afe9454, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
