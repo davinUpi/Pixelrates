@@ -139,7 +139,6 @@ GameObject:
   - component: {fileID: 1679808013}
   - component: {fileID: 1679808017}
   - component: {fileID: 1679808016}
-  - component: {fileID: 1679808015}
   - component: {fileID: 1679808014}
   m_Layer: 5
   m_Name: Score
@@ -164,7 +163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -57.350006, y: -13.014999}
+  m_AnchoredPosition: {x: -57.350006, y: -13.015015}
   m_SizeDelta: {x: 114.6969, y: 23.317001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1679808014
@@ -179,34 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9f88e3f51bd4747a41e08df3a789d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1679808015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1679808012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d067f8ec8af1f604e8c109b53dc234eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventChannel: {fileID: 11400000, guid: 7438c791b192c8f468e9cddd99c339cb, type: 2}
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1679808014}
-        m_TargetAssemblyTypeName: ScoreUI, Assembly-CSharp
-        m_MethodName: UpdateScore
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  playerData: {fileID: 11400000, guid: 398dab8da63ef98469ae0d4faf0455b4, type: 2}
 --- !u!114 &1679808016
 MonoBehaviour:
   m_ObjectHideFlags: 0

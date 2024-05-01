@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     private Animator _animator;
 
+    [Header("Main Data SO")]
     [SerializeField] private PlayerData playerData;
 
     [SerializeField] private float IFrameTime = 1f;
@@ -26,6 +27,11 @@ public class PlayerManager : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        playerData.LatestHealthValue += value => _alive  = value != 0;
+    }
+
     public void TakeDamage(float damage)
     {
         if (!IFrameActive) 
@@ -37,8 +43,5 @@ public class PlayerManager : MonoBehaviour
             _animator.SetTrigger("hit");
         }
     }
-
-    public void UpdateAliveStatus(bool status) =>
-        _alive = status;
     
 }

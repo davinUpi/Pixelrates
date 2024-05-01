@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rbody;
     private Animator _animator;
 
+    // Main data source
+    [Header("Main Data SO")]
+    [SerializeField] private PlayerData playerData;
+
     //Serialized Fields
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpHeight = 5f;
@@ -96,9 +100,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        playerData.LatestHealthValue += value => _alive = value != 0;
     }
 
     // Update is called once per frame
@@ -159,6 +163,4 @@ public class PlayerMovement : MonoBehaviour
         temp.x *= -1;
         transform.localScale = temp;
     }
-
-    public void UpdateAliveStatus(bool status) => _alive = status;
 }

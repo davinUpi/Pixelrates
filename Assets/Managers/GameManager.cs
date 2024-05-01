@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,8 +15,15 @@ public class GameManager : Singleton<GameManager>
 
     private GameObject currentCheckpoint;
 
+
     [Header("Event Channels")]
     [SerializeField] private GameObjectEventChannel PlayerSpawnedEvent;
+
+
+    private void Start()
+    {
+        playerData.LatestHealthValue += value => { if (value == 0) DelayedSpawnPlayer(); };
+    }
 
     #region player spawning
 

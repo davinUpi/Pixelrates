@@ -84,7 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5496190047228182032}
-  - component: {fileID: 3846022067884232763}
+  - component: {fileID: 8315675736423856104}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -114,7 +114,7 @@ RectTransform:
   m_AnchoredPosition: {x: 61.763123, y: -13.210999}
   m_SizeDelta: {x: 124.0264, y: 26.42279}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3846022067884232763
+--- !u!114 &8315675736423856104
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,25 +123,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2124368752706666655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c01663eca028e3f4fa0cc6c5a7dd34dd, type: 3}
+  m_Script: {fileID: 11500000, guid: ffd343a36f093cb46841268b6596ab12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventChannel: {fileID: 11400000, guid: a999ce58edc5a33438814373a071bef7, type: 2}
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8681446162002045920}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_fillAmount
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  playerData: {fileID: 11400000, guid: 398dab8da63ef98469ae0d4faf0455b4, type: 2}
+  healthBarFilling: {fileID: 8681446162002045920}
 --- !u!1 &5084217162092975230
 GameObject:
   m_ObjectHideFlags: 0

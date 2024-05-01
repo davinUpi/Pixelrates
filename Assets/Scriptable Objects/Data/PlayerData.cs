@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,10 +12,9 @@ public class PlayerData : ScriptableObject
     [SerializeField] private float minHealth = 0;
     [SerializeField] private bool resetToMax = true;
 
-    [Header("Event channels")]
-    [SerializeField] private FloatEventChannel HealthPercentageChannel;
-    [SerializeField] private BoolEventChannel PlayerLiveStatusChannel;
-    [SerializeField] private IntEventChannel ScoreUpdateChannel;
+    public event Action<float> LatestHealthValue;
+    public event Action<float> LatestHealthPercentage;
+    public event Action<int> LatestScore;
 
     private float _currentHealth;
     public float CurrentHealth
@@ -24,9 +24,10 @@ public class PlayerData : ScriptableObject
             if(_currentHealth != value)
             {
                 _currentHealth = Mathf.Clamp(value, minHealth, maxHealth);
-                PublishHealthPercentage((_currentHealth - minHealth )/ (maxHealth - minHealth));
 
-                PublishPlayerLiveStatus(_currentHealth > minHealth);
+                LatestHealthValue?.Invoke(_currentHealth);
+                LatestHealthPercentage?.Invoke((_currentHealth - minHealth) /( maxHealth - minHealth));
+                Debug.Log(_currentHealth);
 
             }
         }
@@ -42,8 +43,7 @@ public class PlayerData : ScriptableObject
             if(_currentScore != value)
             {
                 _currentScore = value;
-                PublishScoreUpdate(_currentScore);
-
+                LatestScore?.Invoke(_currentScore);
                 Debug.Log(_currentScore);
             }
         }
@@ -81,26 +81,5 @@ public class PlayerData : ScriptableObject
         ResetHealth();
     }
 
-    #region event channel stuff
-
-    private void PublishHealthPercentage(float percentage)
-    {
-        if(HealthPercentageChannel != null)
-            HealthPercentageChannel.Invoke(percentage);
-    }
-
-    private void PublishPlayerLiveStatus(bool status)
-    {
-        if(PlayerLiveStatusChannel != null) 
-            PlayerLiveStatusChannel.Invoke(status);
-    }
-
-    private void PublishScoreUpdate(int value)
-    {
-        if (ScoreUpdateChannel != null) 
-            ScoreUpdateChannel.Invoke(_currentScore);
-    }
-
-    #endregion
 }
 
