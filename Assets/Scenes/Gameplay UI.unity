@@ -163,8 +163,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -57.350006, y: -13.015015}
-  m_SizeDelta: {x: 114.6969, y: 23.317001}
+  m_AnchoredPosition: {x: -69, y: -16}
+  m_SizeDelta: {x: 88.6969, y: 23.317001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1679808014
 MonoBehaviour:
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.27825928, y: 0, z: 0, w: -0.8690491}
+  m_margin: {x: 0.27825928, y: 0, z: -20.666534, w: -0.8690491}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -347,7 +347,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -417,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5496190047228182032, guid: d1502398077b7b140b74db136b7d60c7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 124.0264
+      value: 98.02637
       objectReference: {fileID: 0}
     - target: {fileID: 5496190047228182032, guid: d1502398077b7b140b74db136b7d60c7, type: 3}
       propertyPath: m_SizeDelta.y
@@ -453,11 +453,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5496190047228182032, guid: d1502398077b7b140b74db136b7d60c7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 61.763123
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 5496190047228182032, guid: d1502398077b7b140b74db136b7d60c7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -13.210999
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 5496190047228182032, guid: d1502398077b7b140b74db136b7d60c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

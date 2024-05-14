@@ -8,7 +8,7 @@ public class Platform : MonoBehaviour
     private TilemapCollider2D _col;
 
     private bool _onThePlatform = false;
-    private readonly WaitForSeconds _reactivateTime = new(0.5f);
+    private readonly WaitForSeconds _reactivateTime = new(1f);
 
     private IEnumerator ReactivateCollider()
     {

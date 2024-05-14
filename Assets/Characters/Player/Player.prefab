@@ -196,8 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 398dab8da63ef98469ae0d4faf0455b4, type: 2}
-  moveSpeed: 8
-  jumpHeight: 10
+  moveSpeed: 7
+  jumpHeight: 8
   groundFilter:
     useTriggers: 0
     useLayerMask: 0

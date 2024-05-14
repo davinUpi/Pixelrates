@@ -47,7 +47,6 @@ public class GameManager : Singleton<GameManager>
             }
 
             playerData.ResetHealth();
-            playerData.ResertScore();
 
             if (PlayerSpawnedEvent != null)
                 PlayerSpawnedEvent.Invoke(playerObject);

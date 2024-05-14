@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1821423742511531392}
   - component: {fileID: 7183718511382017311}
   - component: {fileID: 3113253731535222899}
-  - component: {fileID: 1793500505774670935}
   m_Layer: 0
   m_Name: Cherry
   m_TagString: Untagged
@@ -158,31 +157,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 1
   playerData: {fileID: 11400000, guid: 398dab8da63ef98469ae0d4faf0455b4, type: 2}
---- !u!114 &1793500505774670935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6310969228582325082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 901fc23ddec5d5c4fb89223b48f59895, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventChannel: {fileID: 11400000, guid: 76c678db013796544a82c5da10a19a2c, type: 2}
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3113253731535222899}
-        m_TargetAssemblyTypeName: CollectibleFruit, Assembly-CSharp
-        m_MethodName: EnableSelf
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
