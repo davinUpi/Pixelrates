@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float jumpHeight = 5f;
 
+    [SerializeField] private ContactFilter2D groundFilter;
+
     private bool _alive = true;
 
     //Privat atriutes
@@ -151,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
     private void GroundCheck()
     {
         RaycastHit2D[] hits = new RaycastHit2D[5];
-        int numhits = _rbody.Cast(Vector2.down, hits,0.5f);
+        int numhits = _rbody.Cast(Vector2.down, groundFilter,hits,0.5f);
 
         // if numhits == 0, then Player is on the ground
         Grounded = numhits > 0;
