@@ -124,10 +124,10 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9d7f60614f3e8f740b84fed09cbdbeb6, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 398dab8da63ef98469ae0d4faf0455b4, type: 2}
   moveSpeed: 7
-  jumpHeight: 8
+  jumpHeight: 10
   groundFilter:
     useTriggers: 0
     useLayerMask: 0

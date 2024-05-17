@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 /*
  * This class represent the player's movement system
  * 
@@ -132,12 +133,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        // override the current velocity with our
-        // desired velocity based on inputed movement
-        _rbody.velocity = new Vector2(
-                moveSpeed * HorizontalMovement, 
-                _rbody.velocity.y
-            );
+        float acceleration = HorizontalMovement * moveSpeed;
+        float targetVelocity = Mathf.Clamp(_rbody.velocity.x + acceleration, -moveSpeed, moveSpeed);
+
+        if(ShouldChangeVelocity(targetVelocity))
+        {
+            _rbody.velocity = new Vector2(targetVelocity, _rbody.velocity.y);
+        }
+    }
+
+    private bool ShouldChangeVelocity(float targetVelocity)
+    {
+        float currentVelocity = _rbody.velocity.x;
+        if (currentVelocity == 0) return true;
+
+        if(targetVelocity != 0)
+        {
+            return Mathf.Abs(currentVelocity) < moveSpeed;
+        }
+
+        return false;
     }
 
     private void Jump()
