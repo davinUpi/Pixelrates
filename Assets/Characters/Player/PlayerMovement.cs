@@ -133,26 +133,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        float acceleration = HorizontalMovement * moveSpeed;
-        float targetVelocity = Mathf.Clamp(_rbody.velocity.x + acceleration, -moveSpeed, moveSpeed);
-
-        if(ShouldChangeVelocity(targetVelocity))
-        {
-            _rbody.velocity = new Vector2(targetVelocity, _rbody.velocity.y);
-        }
-    }
-
-    private bool ShouldChangeVelocity(float targetVelocity)
-    {
-        float currentVelocity = _rbody.velocity.x;
-        if (currentVelocity == 0) return true;
-
-        if(targetVelocity != 0)
-        {
-            return Mathf.Abs(currentVelocity) < moveSpeed;
-        }
-
-        return false;
+        _rbody.velocity = new(HorizontalMovement * moveSpeed, _rbody.velocity.y);
     }
 
     private void Jump()

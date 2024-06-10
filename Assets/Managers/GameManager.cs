@@ -10,6 +10,7 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private PlayerData playerData;
+    [SerializeField] private GameObject endPanel;
 
     private GameObject playerObject;
 
@@ -88,5 +89,11 @@ public class GameManager : Singleton<GameManager>
     {
         currentCheckpoint = checkpoint.gameObject;
         Debug.Log("New Checkpoint");
+    }
+
+    public void endGame()
+    {
+        Time.timeScale = 0f;
+        endPanel.SetActive(true);
     }
 }

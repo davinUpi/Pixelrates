@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -79,6 +80,7 @@ public class PlayerData : ScriptableObject
     private void OnEnable()
     {
         ResetHealth();
+        ResertScore();
     }
 
 }
